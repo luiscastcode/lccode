@@ -11,7 +11,7 @@ export default function NavBar() {
   const onClick = () => setIsActive(!isActive);
   const [nav, setNav] = useState(false);
   return (
-    <nav className="fixed w-full z-20 border-gray-200 top-0 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <nav className="fixed w-full z-20 border-gray-200 top-0 bg-gray-800">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="/"
@@ -24,7 +24,7 @@ export default function NavBar() {
             className="h-8"
             alt="LCC Logo"
           />
-          <span className="logoname self-center text-2xl whitespace-nowrap dark:text-white">
+          <span className="logoname self-center text-2xl whitespace-nowrap text-white">
             Luis Cast Code
           </span>
         </Link>

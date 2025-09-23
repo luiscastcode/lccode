@@ -37,7 +37,7 @@ export default function Clima() {
       {listaClima.map((lista, listaIndex) => (
         <div
           key={listaIndex}
-          className="w-full flex flex-col justify-center text-center items-center text-slate-200 p-7 mt-32"
+          className="w-full flex flex-col justify-center text-center items-center text-slate-200 p-7 mt-32 bg-slate-950 rounded-md"
         >
           <h4 className="text-3xl mb-2">Clima en:</h4>
           <h4 className="text-5xl">{lista.ciudad}</h4>
