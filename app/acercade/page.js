@@ -2,6 +2,7 @@ import HeroInterno from "../components/HeroInterno";
 import EncabezadoSeccion from "../components/EncabezadoSeccion";
 import Cta from "../components/Cta";
 import Image from "next/image";
+import BotonSocial from "../components/BotonSocial";
 export const metadata = {
   title: "Acerca De Luis | Soluciones web para tu emprendimiento",
   description:
@@ -10,13 +11,16 @@ export const metadata = {
 export default function Acercade({ titulohero }) {
   return (
     <>
-      <div class="mt-8 grid grid-cols-2 justify-center items-center dark:bg-gray-900 gap-4">
+      <div className="mt-8 grid grid-cols-2 justify-center items-center dark:bg-gray-900 gap-4">
         <div>
           <HeroInterno
             titulohero="Hola, Soy Luis"
             descriphero="Cuento con más de 10 años de experiencia en desarrollo web frontend, especializado en Wordpress, Joomla y Prestashop. Y ahora con todo el poder de react y nextjs
              deasarrollo proyectos ligeros y escalables."
           />
+          <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+            <BotonSocial />
+          </div>
         </div>
         <div>
           <Image

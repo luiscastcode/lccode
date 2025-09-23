@@ -1,4 +1,4 @@
-"use cliente";
+"use client";
 import React, { useState, useEffect } from "react";
 
 const apiId = process.env.NEXT_PUBLIC_CLIMA_API_KEY;
