@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 const apiId = process.env.NEXT_PUBLIC_CLIMA_API_KEY;
 export default function Clima() {
@@ -41,10 +42,12 @@ export default function Clima() {
         >
           <h4 className="text-3xl mb-2">Clima en:</h4>
           <h4 className="text-5xl">{lista.ciudad}</h4>
-          <img
+          <Image
             className="mx-auto"
             src={`https://openweathermap.org/img/wn/${lista.icono}@2x.png`}
             alt="icon"
+            width={48}
+            height={48}
           />
           <h4 className="text-3xl mb-2">Temp: </h4>
           <h4 className="text-5xl"> {lista.temp} º</h4>
