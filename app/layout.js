@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" suppressHydrationWarning={true}>
       <body
-        className={`${poppins.variable} ${rubik_glitch.variable} ${noto_sans.variable}`}
+        className={`${poppins.variable} ${rubik_glitch.variable} ${noto_sans.variable} bg-gradient-to-r from-cyan-300 to-blue-300` }
       >
         <Transicion>
           <NavBar /> {children} <Footer />

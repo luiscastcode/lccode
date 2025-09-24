@@ -19,13 +19,16 @@ export default function Cta({
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
           {descripcta}
         </p>
-        <Link href={urlcta} target={targetcta} rel="noreferrer noopener">
-          <button
-            className="relative px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-lime-500
-        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-amber-500 before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700"
-          >
+        <Link
+          href={urlcta}
+          target={targetcta}
+          rel="noreferrer noopener"
+          className="group relative inline-block focus:ring-3 focus:outline-hidden"
+        >
+          <span className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-yellow-300 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
+          <span className="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold tracking-widest text-black uppercase">
             {textboton}
-          </button>
+          </span>
         </Link>
       </div>
     </div>

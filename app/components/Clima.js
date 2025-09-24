@@ -27,7 +27,7 @@ export default function Clima() {
         },
       ]);
 
-      console.log(data);
+ 
     }
     obtenerClima();
   }, []);

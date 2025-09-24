@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+ 
 import Link from "next/link";
 
 export default function NavBar() {
@@ -10,20 +10,22 @@ export default function NavBar() {
   const [isActive, setIsActive] = useState(dropdownRef, false);
   const onClick = () => setIsActive(!isActive);
   const [nav, setNav] = useState(false);
+
+  const rutas = [
+    {ruta: "/", nombre:"HOme"},
+    {ruta: "/acercade", nombre:"Acerca De"},
+    {ruta: "/#proyectos", nombre:"Proyectos"},
+    {ruta: "/#servicios", nombre:"Servicios"},
+    {ruta: "#", nombre:"Contacto"},
+  ];
   return (
     <nav className="fixed w-full z-20 border-gray-200 top-0 bg-gray-800">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <Link
           href="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+          className="flex items-center space-x-3"
         >
-          <Image
-            width={120}
-            height={120}
-            src="/lcc.svg"
-            className="h-8"
-            alt="LCC Logo"
-          />
+          
           <span className="logoname self-center text-2xl whitespace-nowrap text-white">
             Luis Cast Code
           </span>
@@ -56,85 +58,24 @@ export default function NavBar() {
             isActive ? "hidden" : "block"
           }  w-full md:block md:w-auto`}
         >
-          <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-            <li>
-              <Link
+          <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+           {rutas.map((url) => (
+          <li>
+            <Link
                 onClick={onClick}
-                href="/"
-                className={`block py-2 px-3 md:p-0 text-white ${
-                  pathname === "/"
-                    ? "bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                    : "text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                href={url.ruta}
+                className={`block py-2 px-3 md:p-0  ${
+                  pathname === url.ruta
+                    ? "bg-blue-700 rounded md:bg-transparent text-white"
+                    : "text-gray-900 md:text-white rounded hover:bg-transparent md:border-0 hover:text-yellow-300"
                 } `}
               >
-                Home
+                {url.nombre}
               </Link>
-            </li>
-            <li>
-              <Link
-                onClick={onClick}
-                href="/acercade"
-                className={`block py-2 px-3 md:p-0 text-white ${
-                  pathname === "/acercade"
-                    ? "bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                    : "text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                } `}
-              >
-                Acerca de mi
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={onClick}
-                href="/blog"
-                className={`block py-2 px-3 md:p-0 text-white ${
-                  pathname === "/blog"
-                    ? "bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                    : "text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                } `}
-              >
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={onClick}
-                href="/#proyectos"
-                className={`block py-2 px-3 md:p-0 text-white ${
-                  pathname === "/#proyectos"
-                    ? "bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                    : "text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                } `}
-              >
-                Proyectos
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={onClick}
-                href="/#servicios"
-                className={`block py-2 px-3 md:p-0 text-white ${
-                  pathname === "/#servicios"
-                    ? "bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                    : "text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                } `}
-              >
-                Servicios
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={onClick}
-                href="mailto:castilloluis2005@gmail.com"
-                className={`block py-2 px-3 md:p-0 text-white ${
-                  pathname === "/#"
-                    ? "bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                    : "text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                } `}
-              >
-                Contacto
-              </Link>
-            </li>
+          </li>
+        ))}
+           
+           
           </ul>
         </div>
       </div>
