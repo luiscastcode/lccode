@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer className="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <footer className="bg-white rounded-lg shadow m-1 md:m-4">
+      <div className="w-full mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Link
             href="https://flowbite.com/"
@@ -37,10 +37,10 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-gray-700 lg:my-8" />
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2024{" "}
-          <Link href="https://flowbite.com/" className="hover:underline">
+          <Link href="" className="hover:underline">
             Luis Cast Code™
           </Link>
           . All Rights Reserved.

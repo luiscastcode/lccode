@@ -50,9 +50,9 @@ export default function ItemPortfolio({
       categ2: "Woocommerce Elementor",
       destacado: "bg-[#252734]",
       imagen: "/img/proyectos/gotoca.jpg",
-      url: "https://gotoca.net.ve",
+      url: "",
       target: " _blank",
-      tituloBtn: "visitar",
+      tituloBtn: "inactivo",
     },
     {
       id: 4,
@@ -63,7 +63,7 @@ export default function ItemPortfolio({
       categ2: "NextJS Framework",
       destacado: "bg-[#252734]",
       imagen: "/img/proyectos/lcc.jpg",
-      url: "https://castillowebdev.netlify.app/",
+      url: "https://lcastcode.vercel.app/",
       target: " ",
       tituloBtn: "visitar",
     },
@@ -75,7 +75,7 @@ export default function ItemPortfolio({
       categ2: "Astro Framework",
       destacado: "bg-[#252734]",
       imagen: "/img/proyectos/directorioia.webp",
-      url: "https://directorioappsia.online",
+      url: "https://aplicacionesdeia.site",
       target: "_blank ",
       tituloBtn: "visitar",
     },
@@ -101,9 +101,9 @@ export default function ItemPortfolio({
       categ2: "Elementor",
       destacado: "bg-[#252734]",
       imagen: "/img/proyectos/bd.jpg",
-      url: "https://bodegondiesel.pro",
+      url: " ",
       target: "_blank",
-      tituloBtn: "visitar",
+      tituloBtn: "inactivo",
     },
 
     {
@@ -158,32 +158,41 @@ export default function ItemPortfolio({
               </motion.div>
 
               <div className="p-5">
-                <a href={url} target={target}>
-                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {titulo}
-                  </h5>
-                </a>
+                <h4 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                  {titulo}
+                </h4>
+
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                   {categ1}
                 </span>
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                   {categ2}
                 </span>
-                <p className="mb-3 font-normal text-white dark:text-white">
+                <p className="mb-3 text-gray-700">
                   {descrip}
                 </p>
-                <button
-                  className="relative uppercase px-8 py-2 rounded-md bg-white isolation-auto z-10 border-2 border-lime-500
-        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full before:bg-amber-500 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700"
+                <a
+                  class="inline-flex items-center gap-2 rounded-xl border border-indigo-600 bg-indigo-600 px-4 py-3 text-white hover:bg-transparent hover:text-indigo-600 focus:ring-3 focus:outline-hidden"
+                  href={url}
+                  target={target}
                 >
-                  <a
-                    href={url}
-                    target={target}
-                    className="inline-flex text-gray-900 fon-bold text-center "
+                  <span class="text-lg font-medium uppercase"> {tituloBtn} </span>
+
+                  <svg
+                    class="size-5 shadow-sm rtl:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    {tituloBtn}
-                  </a>
-                </button>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
           )

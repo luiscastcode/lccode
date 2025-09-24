@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { usePathname } from "next/navigation";
-
+ 
 import Link from "next/link";
 
 export default function NavBar() {
@@ -12,16 +12,20 @@ export default function NavBar() {
   const [nav, setNav] = useState(false);
 
   const rutas = [
-    { id: 1, ruta: "/", nombre: "HOme" },
-    { id: 2, ruta: "/acercade", nombre: "Acerca De" },
-    { id: 3, ruta: "/#proyectos", nombre: "Proyectos" },
-    { id: 4, ruta: "/#servicios", nombre: "Servicios" },
-    { id: 4, ruta: "#", nombre: "Contacto" },
+    {id: 1,ruta: "/", nombre:"HOme"},
+    {id: 2,ruta: "/acercade", nombre:"Acerca De"},
+    {id: 3,ruta: "/#proyectos", nombre:"Proyectos"},
+    {id: 4,ruta: "/#servicios", nombre:"Servicios"},
+    {id: 4, ruta: "#", nombre:"Contacto"},
   ];
   return (
     <nav className="fixed w-full z-20 border-gray-200 top-0 bg-gray-800">
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-        <Link href="/" className="flex items-center space-x-3">
+      <div className="max-w-screen-xl grid grid-cols-2 gap-4 md:grid-flow-row items-center justify-between mx-auto p-4">
+        <Link
+          href="/"
+          className="flex items-center space-x-3"
+        >
+          
           <span className="logoname self-center text-2xl whitespace-nowrap text-white">
             Luis Cast Code
           </span>
@@ -54,22 +58,24 @@ export default function NavBar() {
             isActive ? "hidden" : "block"
           }  w-full md:block md:w-auto`}
         >
-          <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
-            {rutas.map((url, id) => (
-              <li key={id}>
-                <Link
-                  onClick={onClick}
-                  href={url.ruta}
-                  className={`block py-2 px-3 md:p-0  ${
-                    pathname === url.ruta
-                      ? "bg-blue-700 rounded md:bg-transparent text-white"
-                      : "text-gray-900 md:text-white rounded hover:bg-transparent md:border-0 hover:text-yellow-300"
-                  } `}
-                >
-                  {url.nombre}
-                </Link>
-              </li>
-            ))}
+          <ul className="flex flex-col w-full font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+           {rutas.map((url, id) => (
+          <li key={id}>
+            <Link
+                onClick={onClick}
+                href={url.ruta}
+                className={`block py-2 px-3 md:p-0  ${
+                  pathname === url.ruta
+                    ? "bg-blue-700 rounded md:bg-transparent text-white"
+                    : "text-gray-900 md:text-white rounded hover:bg-transparent md:border-0 hover:text-yellow-300"
+                } `}
+              >
+                {url.nombre}
+              </Link>
+          </li>
+        ))}
+           
+           
           </ul>
         </div>
       </div>

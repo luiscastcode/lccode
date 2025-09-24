@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section className="rounded-lg shadow dark:bg-gray-900 m-4">
-        <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+      <section className="w-full mx-auto">
+        <div className="p-1 md:p-4 md:py-8">
           <EncabezadoSeccion
             idseccion="proyectos"
             tituloseccion="Proyectos"
