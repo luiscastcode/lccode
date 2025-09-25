@@ -54,7 +54,7 @@ export default function NavBar() {
             isActive ? "hidden" : "block"
           }  w-full md:block md:w-auto`}
         >
-          <ul className="w-full font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+          <ul className="flex w-full font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
             {rutas.map((url, id) => (
               <li key={id}>
                 <Link
