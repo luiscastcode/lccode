@@ -8,7 +8,7 @@ export default function HeroInterno({ titulohero, descriphero }) {
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
           <div>
             <div class="max-w-prose md:max-w-none">
-              <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+              <h2 class="text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r to-amber-600 from-sky-400">
                 {titulohero}
               </h2>
 

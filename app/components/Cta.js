@@ -8,12 +8,12 @@ export default function Cta({
   textboton,
 }) {
   return (
-    <div className="m-6 p-4 bg-white border border-gray-200 rounded-lg shadow">
+    <div className="m-1 md:m-6 p-1 md:p-4 bg-white border border-gray-200 rounded-lg shadow">
       <div
         id={idcta}
         className="flex flex-col items-center justify-center mx-auto py-8 px-4 max-w-screen-xl text-center md:py-16"
       >
-        <h1 className="mb-4 text-4xl tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-transparent bg-clip-text bg-gradient-to-r to-amber-600 from-sky-400">
+        <h1 className="mb-4 text-4xl tracking-tight leading-none  md:text-6xl text-transparent bg-clip-text bg-gradient-to-r to-amber-600 from-sky-400">
           {titulocta}
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 md:text-xl sm:px-16 lg:px-48">
