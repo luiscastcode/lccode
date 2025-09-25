@@ -27,11 +27,11 @@ export default function BotonSocial({ id, title, url, socialicon }) {
     },
   ];
   return (
-    <div className="flex bg-white w-fit px-1.25 py-1 shadow-box-up rounded-2xl dark:bg-box-dark dark:shadow-box-dark-out">
+    <div className="flex bg-white w-fit px-1.25 py-1 shadow-box-up rounded-2xl">
       {itemsocial.map(({ id, title, url, socialicon }) => (
         <div
           key={id}
-          className="dark:shadow-buttons-box-dark rounded-2xl w-full px-1.5 py-1.5 md:px-3 md:py-1"
+          className="rounded-2xl w-full px-1.5 py-1.5 md:px-3 md:py-1"
         >
           <Link
             href={url}

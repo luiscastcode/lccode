@@ -1,8 +1,7 @@
 import HeroInterno from "../components/HeroInterno";
 import EncabezadoSeccion from "../components/EncabezadoSeccion";
 import Cta from "../components/Cta";
-import Image from "next/image";
-import BotonSocial from "../components/BotonSocial";
+
 export const metadata = {
   title: "Acerca De Luis | Soluciones web para tu emprendimiento",
   description:
@@ -11,28 +10,13 @@ export const metadata = {
 export default function Acercade({ titulohero }) {
   return (
     <>
-      <div className="mt-8 grid grid-cols-2 justify-center items-center dark:bg-gray-900 gap-4">
-        <div>
-          <HeroInterno
-            titulohero="Hola, Soy Luis"
-            descriphero="Cuento con más de 10 años de experiencia en desarrollo web frontend, especializado en Wordpress, Joomla y Prestashop. Y ahora con todo el poder de react y nextjs
+      <HeroInterno
+        titulohero="Hola, Soy Luis"
+        descriphero="Cuento con más de 10 años de experiencia en desarrollo web frontend, especializado en Wordpress, Joomla y Prestashop. Y ahora con todo el poder de react y Nextjs
              deasarrollo proyectos ligeros y escalables."
-          />
-          <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-            <BotonSocial />
-          </div>
-        </div>
-        <div>
-          <Image
-            className="h-auto max-w-full rounded-lg"
-            src="/img/yo.png"
-            alt="yos"
-            width={334}
-            height={748}
-          />
-        </div>
-      </div>
-      <section className="rounded-lg shadow dark:bg-gray-900">
+      />
+
+      <section className="rounded-lg shadow">
         <EncabezadoSeccion
           idseccion="exp"
           tituloseccion="Experiencia"
@@ -40,13 +24,13 @@ export default function Acercade({ titulohero }) {
         />
 
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-          <ol className="relative border-s border-gray-200 dark:border-gray-700">
+          <ol className="relative border-s border-gray-200">
             <li className="mb-10 ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <div className="absolute w-3 h-3 bg-amber-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-500">
                 Febrero 2023 - Actual 2024
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-amber-600">
+              <h3 className="text-lg font-semibold text-amber-600">
                 Webmaster Principal
               </h3>
               <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
@@ -57,7 +41,7 @@ export default function Acercade({ titulohero }) {
                 href="https://fencingven.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-amber-300 border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700"
               >
                 Ver plataforma
                 <svg
@@ -78,26 +62,26 @@ export default function Acercade({ titulohero }) {
             </li>
             <li className="mb-10 ms-4">
               <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <time className="mb-1 text-sm font-normal leading-none text-gray-400">
                 Desde el 2015
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-amber-600">
+              <h3 className="text-lg font-semibold text-amber-600">
                 Diseñador Web Freelancer
               </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="text-base font-normal text-gray-400">
                 Mas de 9 años de experiencia en el diseño web primero con
                 Joomla, luego con Wordpress y ahora con React y sus derivados.
               </p>
             </li>
             <li className="ms-4">
-              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-300">
                 Abril 2021 - Marzo 2022
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-amber-600">
+              <h3 className="text-lg font-semibold text-amber-600">
                 Diseñador Web en ViralizationMKT
               </h3>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+              <p className="text-base font-normal text-gray-400">
                 Encargado de diseñar webs para los clientes de la agencia de
                 marketing ViralizationMKT en Lima, Perú.
               </p>

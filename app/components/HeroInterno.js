@@ -1,16 +1,36 @@
-
+import Image from "next/image";
+import BotonSocial from "../components/BotonSocial";
 
 export default function HeroInterno({ titulohero, descriphero }) {
   return (
-    <section class="bg-white">
-      <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl dark:text-transparent bg-clip-text bg-gradient-to-r to-amber-600 from-sky-400">
-          {titulohero}
-        </h1>
-        <p class="mb-8 text-lg font-normal text-justify text-gray-500 lg:text-xl sm:px-16 lg:px-40 dark:text-gray-400">
-          {descriphero}
-        </p>
-         
+    <section>
+      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 md:px-8 bg-slate-200 rounded-md mt-[75px]">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+          <div>
+            <div class="max-w-prose md:max-w-none">
+              <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+                {titulohero}
+              </h2>
+
+              <p class="mt-4 text-gray-700">
+                {descriphero}
+              </p>
+            </div>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 my-8">
+              <BotonSocial />
+            </div>
+          </div>
+
+          <div>
+            <Image
+              className="mt-[-48px] rounded-lg"
+              src="/img/yo.png"
+              alt="yos"
+              width={334}
+              height={548}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
