@@ -20,7 +20,7 @@ export default function NavBar() {
   ];
   return (
     <nav className="fixed w-full z-20 border-gray-200 top-0 bg-gray-800">
-      <div className="max-w-screen-xl grid grid-cols-2 gap-4 md:grid-flow-row items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl grid gap-48 md:gap-4 grid-cols-2 items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center space-x-3">
           <span className="logoname self-center text-2xl whitespace-nowrap text-white">
             Luis Cast Code
@@ -29,7 +29,7 @@ export default function NavBar() {
         <button
           onClick={onClick}
           type="button"
-          className="flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-200 hover:text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
         >
           <span className="sr-only">Open main menu</span>
           <svg
@@ -52,9 +52,9 @@ export default function NavBar() {
           ref={dropdownRef}
           className={`${
             isActive ? "hidden" : "block"
-          }  w-full md:block md:w-auto`}
+          } w-[363px] md:block md:w-auto mt-[-163px] md:mt-1`}
         >
-          <ul className="flex w-full font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+          <ul className="flex flex-col md:flex-row font-medium rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-transparent">
             {rutas.map((url, id) => (
               <li key={id}>
                 <Link
