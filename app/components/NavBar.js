@@ -12,7 +12,7 @@ export default function NavBar() {
   const [nav, setNav] = useState(false);
 
   const rutas = [
-    { id: 1, ruta: "/", nombre: "HOme" },
+    { id: 1, ruta: "/", nombre: "Home" },
     { id: 2, ruta: "/acercade", nombre: "Acerca De" },
     { id: 3, ruta: "/#proyectos", nombre: "Proyectos" },
     { id: 4, ruta: "/#servicios", nombre: "Servicios" },
@@ -52,7 +52,7 @@ export default function NavBar() {
           ref={dropdownRef}
           className={`${
             isActive ? "hidden" : "block"
-          } w-[363px] md:block md:w-auto mt-[-163px] md:mt-1`}
+          } w-[320px] md:block md:w-auto mt-[-163px] md:mt-1`}
         >
           <ul className="flex flex-col md:flex-row font-medium rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-transparent">
             {rutas.map((url, id) => (
