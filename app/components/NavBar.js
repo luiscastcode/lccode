@@ -1,0 +1,78 @@
+"use client";
+import { useState, useRef } from "react";
+import { usePathname } from "next/navigation";
+
+import Link from "next/link";
+
+export default function NavBar() {
+  const pathname = usePathname();
+  const dropdownRef = useRef(null);
+  const [isActive, setIsActive] = useState(dropdownRef, false);
+  const onClick = () => setIsActive(!isActive);
+  const [nav, setNav] = useState(false);
+
+  const rutas = [
+    { id: 1, ruta: "/", nombre: "Home" },
+    { id: 2, ruta: "/acercade", nombre: "Acerca De" },
+    { id: 3, ruta: "/#proyectos", nombre: "Proyectos" },
+    { id: 4, ruta: "/#servicios", nombre: "Servicios" },
+    { id: 4, ruta: "#", nombre: "Contacto" },
+  ];
+  return (
+    <nav className="fixed w-full z-20 border-gray-200 top-0 bg-gray-800">
+      <div className="max-w-screen-xl grid gap-48 md:gap-4 grid-cols-2 items-center justify-between mx-auto p-4">
+        <Link href="/" className="flex items-center space-x-3">
+          <span className="logoname self-center text-2xl whitespace-nowrap text-white">
+            Luis Cast Code
+          </span>
+        </Link>
+        <button
+          onClick={onClick}
+          type="button"
+          className="flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-200 hover:text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div
+          ref={dropdownRef}
+          className={`${
+            isActive ? "hidden" : "block"
+          } w-[320px] md:block md:w-auto mt-[-163px] md:mt-1`}
+        >
+          <ul className="flex flex-col md:flex-row font-medium rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-transparent">
+            {rutas.map((url, id) => (
+              <li key={id}>
+                <Link
+                  onClick={onClick}
+                  href={url.ruta}
+                  className={`block py-2 px-3 md:p-0  ${
+                    pathname === url.ruta
+                      ? "bg-blue-700 rounded md:bg-transparent text-white"
+                      : "text-gray-900 md:text-white rounded hover:bg-transparent md:border-0 hover:text-yellow-300"
+                  } `}
+                >
+                  {url.nombre}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
